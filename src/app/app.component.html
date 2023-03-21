@@ -1,6 +1,15 @@
-<app-count></app-count>
+<app-count [startNum]="3" (valueChanged)="newValue($event)"></app-count>
+<app-numlist [numImages]="pics"></app-numlist>
+<app-numlist></app-numlist>
+<!-- <app-count [startNum]="num"></app-count> -->
+
+<!-- <div class="box-it">
+  <app-count></app-count>
+</div>
 <app-count [startNum]="10"></app-count>
-<app-count [startNum]="20"></app-count>
+<div class="box-it">
+  <app-count [startNum]="20" class="box-it"></app-count>
+</div> -->
 <!-- <h1>{{ title }}</h1>
 
 <h1

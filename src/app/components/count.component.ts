@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-count',
@@ -8,6 +9,10 @@ import { Component, Input } from '@angular/core';
 export class CountComponent {
   @Input()
   startNum = 0;
+
+  @Output()
+  valueChanged = new Subject<number>();
+
   updatePic(inc: number) {
     this.startNum += inc;
     if (this.startNum < 0) {
@@ -15,5 +20,6 @@ export class CountComponent {
     } else if (this.startNum > 30) {
       this.startNum = 0;
     }
+    this.valueChanged.next(inc);
   }
 }
